@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Credentials } from '../../models/credentials.dto';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   password: FormControl
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder, private router: Router){
     this.credentials = new Credentials(null, null);
 
     this.email = new FormControl('', [Validators.required, Validators.email]);
@@ -30,5 +31,7 @@ export class LoginComponent implements OnInit {
   checkLogin(): void {
     console.log('Email: ' + this.email.value);
     console.log('Pasword: ' + this.password.value);
+
+    this.router.navigate(['cards']);
   }
 }
