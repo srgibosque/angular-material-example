@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CardsComponent } from './components/cards/cards.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule } from '@angular/material/input';
 import {MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http';
-import { CardsComponent } from './components/cards/cards.component';
+import {MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CardsComponent } from './components/cards/cards.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
 
   ],
   providers: [
